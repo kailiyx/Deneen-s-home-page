@@ -1,0 +1,219 @@
+/* 基本リセットとフォント設定 (変更なし) */
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+/* ヘッダーのスタイリング (変更なし) */
+.main-header {
+    background-color: #004d99; /* 濃い青 */
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.main-header h1 {
+    margin-bottom: 5px;
+    font-size: 2.5em;
+    letter-spacing: 2px;
+}
+
+.main-header p {
+    font-size: 1.1em;
+}
+
+/* ナビゲーションのスタイリング (変更なし) */
+.main-nav {
+    background-color: #0066cc; /* 少し明るい青 */
+    padding: 10px 0;
+    text-align: center;
+}
+
+.main-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.main-nav li {
+    margin: 0 15px;
+}
+
+.main-nav a {
+    color: white;
+    text-decoration: none;
+    padding: 8px 15px;
+    display: block;
+    transition: background-color 0.3s;
+    border-radius: 5px;
+}
+
+.main-nav a:hover {
+    background-color: #0073e6;
+}
+
+/* セクションの一般的なスタイリング (変更なし) */
+.section-container {
+    padding: 40px 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.section-container:nth-child(even) {
+    background-color: #e9e9f2;
+}
+
+h2 {
+    color: #004d99;
+    text-align: center;
+    margin-bottom: 30px;
+    border-bottom: 2px solid #004d99;
+    display: block;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 5px;
+}
+
+
+/* --- メンバー一覧（ロースター）のスタイル --- */
+.roster-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    padding: 20px 0;
+}
+
+.player-name {
+    background-color: white;
+    padding: 15px;
+    border-radius: 6px;
+    text-align: center;
+    font-weight: bold;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.primary-player {
+    background-color: #ffd700;
+    color: #333;
+    border: 2px solid #ffaa00;
+}
+
+.captain-player {
+    background-color: #ff6347;
+    color: white;
+    border: 2px solid #cc4c33;
+}
+
+
+/* --- スタメンテーブルのスタイル --- */
+.lineup-table-container {
+    /* スクロールを可能にするコンテナを追加（モバイル対応強化） */
+    overflow-x: auto; 
+    -webkit-overflow-scrolling: touch;
+}
+
+.lineup-table {
+    width: 100%;
+    min-width: 350px; /* 最小幅を設定し、はみ出したらスクロールさせる */
+    max-width: 600px;
+    border-collapse: collapse;
+    margin: 20px auto; /* 中央寄せ */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: white;
+}
+
+.lineup-table th, .lineup-table td {
+    padding: 12px 15px;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+.lineup-table thead th {
+    background-color: #004d99;
+    color: white;
+    font-weight: bold;
+    /* モバイルでスペースを節約するため、thのパディングを調整 */
+    padding: 8px 10px; 
+}
+
+.lineup-table tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.lineup-table tbody tr:hover {
+    background-color: #e6f7ff;
+}
+
+.lineup-table td:nth-child(2) {
+    text-align: left;
+    font-weight: 500;
+}
+
+
+/* フッターのスタイリング (変更なし) */
+.main-footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    font-size: 0.9em;
+    margin-top: 30px;
+}
+
+/* リンクの基本設定 (変更なし) */
+a {
+    color: #0066cc;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* === モバイル専用のレスポンシブ対応 === */
+@media (max-width: 768px) {
+    /* 768px以下（タブレット・スマホ）での調整 */
+    .section-container {
+        padding: 20px 10px; /* 左右の余白を少し減らす */
+    }
+}
+
+@media (max-width: 600px) {
+    /* 600px以下（主にスマホ）での調整 */
+    
+    /* ヘッダーの文字サイズを調整 */
+    .main-header h1 {
+        font-size: 2em;
+    }
+
+    /* ナビゲーションを縦に並べる */
+    .main-nav ul {
+        flex-direction: column;
+    }
+    .main-nav li {
+        margin: 5px 0;
+    }
+    .main-nav a {
+        padding: 5px; /* ボタンのサイズを小さく */
+    }
+
+    /* メンバー一覧のフォントを少し小さく */
+    .player-name {
+        font-size: 0.95em;
+        padding: 10px;
+    }
+    
+    /* スタメンテーブルのセルのパディングを小さく */
+    .lineup-table th, .lineup-table td {
+        padding: 8px 5px;
+        font-size: 0.85em;
+    }
+}
