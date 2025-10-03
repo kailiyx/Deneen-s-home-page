@@ -1,4 +1,4 @@
-/* 基本リセットとフォント設定 (変更なし) */
+/* 基本リセットとフォント設定 */
 body {
     font-family: 'Helvetica Neue', Arial, sans-serif;
     margin: 0;
@@ -8,7 +8,7 @@ body {
     color: #333;
 }
 
-/* ヘッダーのスタイリング (変更なし) */
+/* ヘッダーのスタイリング */
 .main-header {
     background-color: #004d99; /* 濃い青 */
     color: white;
@@ -25,9 +25,10 @@ body {
 
 .main-header p {
     font-size: 1.1em;
+    opacity: 0.9;
 }
 
-/* ナビゲーションのスタイリング (変更なし) */
+/* ナビゲーションのスタイリング */
 .main-nav {
     background-color: #0066cc; /* 少し明るい青 */
     padding: 10px 0;
@@ -56,10 +57,10 @@ body {
 }
 
 .main-nav a:hover {
-    background-color: #0073e6;
+    background-color: #0073e6; /* ホバー時の色 */
 }
 
-/* セクションの一般的なスタイリング (変更なし) */
+/* セクションの一般的なスタイリング */
 .section-container {
     padding: 40px 20px;
     max-width: 1000px;
@@ -67,7 +68,7 @@ body {
 }
 
 .section-container:nth-child(even) {
-    background-color: #e9e9f2;
+    background-color: #e9e9f2; /* 交互の背景色 */
 }
 
 h2 {
@@ -86,6 +87,7 @@ h2 {
 /* --- メンバー一覧（ロースター）のスタイル --- */
 .roster-grid {
     display: grid;
+    /* 画面幅に合わせて自動調整するグリッド */
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 15px;
     padding: 20px 0;
@@ -100,14 +102,16 @@ h2 {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
+/* デニーン監督のスタイル */
 .primary-player {
-    background-color: #ffd700;
+    background-color: #ffd700; /* ゴールド */
     color: #333;
     border: 2px solid #ffaa00;
 }
 
+/* 岩崎キャプテンのスタイル */
 .captain-player {
-    background-color: #ff6347;
+    background-color: #ff6347; /* トマトレッド */
     color: white;
     border: 2px solid #cc4c33;
 }
@@ -115,14 +119,14 @@ h2 {
 
 /* --- スタメンテーブルのスタイル --- */
 .lineup-table-container {
-    /* スクロールを可能にするコンテナを追加（モバイル対応強化） */
+    /* モバイルでの横スクロールを可能にするコンテナ */
     overflow-x: auto; 
     -webkit-overflow-scrolling: touch;
 }
 
 .lineup-table {
     width: 100%;
-    min-width: 350px; /* 最小幅を設定し、はみ出したらスクロールさせる */
+    min-width: 350px; /* 最小幅を設定し、はみ出たらスクロールさせる */
     max-width: 600px;
     border-collapse: collapse;
     margin: 20px auto; /* 中央寄せ */
@@ -140,7 +144,6 @@ h2 {
     background-color: #004d99;
     color: white;
     font-weight: bold;
-    /* モバイルでスペースを節約するため、thのパディングを調整 */
     padding: 8px 10px; 
 }
 
@@ -158,7 +161,7 @@ h2 {
 }
 
 
-/* フッターのスタイリング (変更なし) */
+/* フッターのスタイリング */
 .main-footer {
     background-color: #333;
     color: white;
@@ -168,7 +171,7 @@ h2 {
     margin-top: 30px;
 }
 
-/* リンクの基本設定 (変更なし) */
+/* リンクの基本設定 */
 a {
     color: #0066cc;
     text-decoration: none;
@@ -180,16 +183,13 @@ a:hover {
 
 /* === モバイル専用のレスポンシブ対応 === */
 @media (max-width: 768px) {
-    /* 768px以下（タブレット・スマホ）での調整 */
     .section-container {
-        padding: 20px 10px; /* 左右の余白を少し減らす */
+        padding: 20px 10px; 
     }
 }
 
 @media (max-width: 600px) {
-    /* 600px以下（主にスマホ）での調整 */
     
-    /* ヘッダーの文字サイズを調整 */
     .main-header h1 {
         font-size: 2em;
     }
@@ -202,10 +202,10 @@ a:hover {
         margin: 5px 0;
     }
     .main-nav a {
-        padding: 5px; /* ボタンのサイズを小さく */
+        padding: 5px; 
     }
 
-    /* メンバー一覧のフォントを少し小さく */
+    /* メンバー一覧のフォントを調整 */
     .player-name {
         font-size: 0.95em;
         padding: 10px;
@@ -217,3 +217,4 @@ a:hover {
         font-size: 0.85em;
     }
 }
+
