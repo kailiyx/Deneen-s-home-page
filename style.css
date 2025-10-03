@@ -1,3 +1,4 @@
+/* (前回の style.css の内容をそのまま貼り付けてください) */
 /* 基本リセットとフォント設定 */
 body {
     font-family: 'Helvetica Neue', Arial, sans-serif;
@@ -88,19 +89,48 @@ h2 {
 .roster-grid {
     display: grid;
     /* 画面幅に合わせて自動調整するグリッド */
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     gap: 15px;
     padding: 20px 0;
+    justify-content: center; /* グリッドアイテムを中央寄せ */
 }
 
-.player-name {
+.member-card { /* player-name から member-card にクラス名を変更 */
     background-color: white;
     padding: 15px;
-    border-radius: 6px;
+    border-radius: 8px; /* 角を少し丸く */
     text-align: center;
     font-weight: bold;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    display: flex; /* 写真と名前を縦に並べるためにflexboxを使用 */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
+
+/* メンバー写真のスタイル */
+.member-photo {
+    width: 80px;  /* 写真の幅 */
+    height: 80px; /* 写真の高さ */
+    object-fit: cover; /* 画像の比率を保ちつつ、指定サイズに収める */
+    border-radius: 50%; /* 丸い形にする */
+    margin-bottom: 10px; /* 写真と名前の間のスペース */
+    border: 2px solid #ccc; /* 写真の周りに枠線 */
+}
+
+.member-name {
+    margin: 0;
+    font-size: 1.0em;
+    line-height: 1.3;
+}
+
+.member-name span { /* (監督) や (CAPTAIN) の文字を小さく */
+    font-size: 0.8em;
+    font-weight: normal;
+    display: block; /* 改行して表示 */
+    color: #555;
+}
+
 
 /* デニーン監督のスタイル */
 .primary-player {
@@ -108,6 +138,10 @@ h2 {
     color: #333;
     border: 2px solid #ffaa00;
 }
+.primary-player .member-photo {
+    border-color: #ffaa00; /* 枠線の色も合わせる */
+}
+
 
 /* 岩崎キャプテンのスタイル */
 .captain-player {
@@ -115,21 +149,23 @@ h2 {
     color: white;
     border: 2px solid #cc4c33;
 }
+.captain-player .member-photo {
+    border-color: #cc4c33; /* 枠線の色も合わせる */
+}
 
 
 /* --- スタメンテーブルのスタイル --- */
 .lineup-table-container {
-    /* モバイルでの横スクロールを可能にするコンテナ */
     overflow-x: auto; 
     -webkit-overflow-scrolling: touch;
 }
 
 .lineup-table {
     width: 100%;
-    min-width: 350px; /* 最小幅を設定し、はみ出たらスクロールさせる */
+    min-width: 350px; 
     max-width: 600px;
     border-collapse: collapse;
-    margin: 20px auto; /* 中央寄せ */
+    margin: 20px auto; 
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     background-color: white;
 }
@@ -205,12 +241,19 @@ a:hover {
         padding: 5px; 
     }
 
-    /* メンバー一覧のフォントを調整 */
-    .player-name {
-        font-size: 0.95em;
-        padding: 10px;
+    /* メンバー一覧のフォントと写真サイズを調整 */
+    .member-photo {
+        width: 60px;
+        height: 60px;
+        margin-bottom: 8px;
     }
-    
+    .member-name {
+        font-size: 0.9em;
+    }
+    .member-name span {
+        font-size: 0.75em;
+    }
+
     /* スタメンテーブルのセルのパディングを小さく */
     .lineup-table th, .lineup-table td {
         padding: 8px 5px;
