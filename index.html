@@ -20,25 +20,18 @@
         const CORRECT_PASSWORD = "d";
 
         function checkPassword() {
-            // パスワード入力ダイアログを表示
             let password = prompt("このサイトはプライベートです。\nパスワードを入力してください:");
 
-            // パスワードをチェック
             if (password === CORRECT_PASSWORD) {
-                // 正しい場合、コンテンツを表示
                 document.getElementById('content').style.display = 'block';
             } else if (password !== null && password !== "") {
-                // 間違っていて、かつキャンセルされていない場合、再度認証を促す
                 alert("パスワードが違います。");
-                checkPassword(); // 再度認証関数を呼び出し
+                checkPassword();
             } else if (password === null) {
-                // キャンセルされた場合、ページを閉じるメッセージを表示
                 alert("キャンセルされました。ページを閲覧するにはパスワードが必要です。");
-                // 実際にはページを閉じませんが、これ以上の操作は許可しません。
             }
         }
 
-        // ページロード時に認証を開始
         window.onload = checkPassword;
     </script>
     
@@ -66,20 +59,56 @@
             </section>
 
             <section id="roster" class="section-container">
-                <h2>メンバー一覧</h2>
+                <h2>メンバー一覧 (Roster)</h2>
                 <div class="roster-grid">
-                    <span class="player-name primary-player">デニーン 海里 (監督)</span>
-                    <span class="player-name captain-player">岩崎 壱知 (CAPTAIN)</span>
-                    <span class="player-name">高瀬 拓弥</span>
-                    <span class="player-name">髙木 偉月</span>
-                    <span class="player-name">野田 雪斗</span>
-                    <span class="player-name">小西 政輝</span>
-                    <span class="player-name">開田 脩斗</span>
-                    <span class="player-name">吉岡 夏陽</span>
-                    <span class="player-name">溝口 遼太</span>
-                    <span class="player-name">上村 悠斗</span>
-                    <span class="player-name">竹村 一</span>
-                    <span class="player-name">一杉 康介</span>
+                    <div class="member-card primary-player">
+                        <img src="images/deneen.jpg" alt="デニーン海里" class="member-photo">
+                        <p class="member-name">デニーン 海里<br><span>(監督)</span></p>
+                    </div>
+                    <div class="member-card captain-player">
+                        <img src="images/iwasaki.jpg" alt="岩崎壱知" class="member-photo">
+                        <p class="member-name">岩崎 壱知<br><span>(CAPTAIN)</span></p>
+                    </div>
+                    <div class="member-card">
+                        <img src="images/default.jpg" alt="高瀬拓弥" class="member-photo">
+                        <p class="member-name">高瀬 拓弥</p>
+                    </div>
+                    <div class="member-card">
+                        <img src="images/default.jpg" alt="髙木偉月" class="member-photo">
+                        <p class="member-name">髙木 偉月</p>
+                    </div>
+                    <div class="member-card">
+                        <img src="images/default.jpg" alt="野田雪斗" class="member-photo">
+                        <p class="member-name">野田 雪斗</p>
+                    </div>
+                    <div class="member-card">
+                        <img src="images/default.jpg" alt="小西政輝" class="member-photo">
+                        <p class="member-name">小西 政輝</p>
+                    </div>
+                    <div class="member-card">
+                        <img src="images/default.jpg" alt="開田脩斗" class="member-photo">
+                        <p class="member-name">開田 脩斗</p>
+                    </div>
+                    <div class="member-card">
+                        <img src="images/default.jpg" alt="吉岡夏陽" class="member-photo">
+                        <p class="member-name">吉岡 夏陽</p>
+                    </div>
+                    <div class="member-card">
+                        <img src="images/default.jpg" alt="溝口遼太" class="member-photo">
+                        <p class="member-name">溝口 遼太</p>
+                    </div>
+                    <div class="member-card">
+                        <img src="images/default.jpg" alt="上村悠斗" class="member-photo">
+                        <p class="member-name">上村 悠斗</p>
+                    </div>
+                    <div class="member-card">
+                        <img src="images/default.jpg" alt="竹村一" class="member-photo">
+                        <p class="member-name">竹村 一</p>
+                    </div>
+                    <div class="member-card">
+                        <img src="images/default.jpg" alt="一杉康介" class="member-photo">
+                        <p class="member-name">一杉 康介</p>
+                    </div>
                 </div>
             </section>
             
@@ -97,7 +126,7 @@
                         <tbody>
                             <tr><td>1</td><td>ライト (RF)</td><td>吉岡 夏陽</td></tr>
                             <tr><td>2</td><td>キャッチャー (C)</td><td>デニーン 海里</td></tr>
-                            <tr><td>3</td><td>セカンド (2B)</td><td>古本 大智</td>
+                            <tr><td>3</td><td>セカンド (2B)</td><td>古本 大智</td></tr>
                             <tr><td>4</td><td>ピッチャー (P)</td><td>岩崎 壱知</td></tr>
                             <tr><td>5</td><td>ショート (SS)</td><td>溝口 遼太</td></tr>
                             <tr><td>6</td><td>センター (CF)</td><td>開田 脩斗</td></tr>
@@ -124,5 +153,4 @@
     
 </body>
 </html>
-
 
